@@ -27,5 +27,6 @@ jobs:
       # https://github.com/julia-actions/julia-runtest/blob/master/action.yml
       # in order to pass customised arguments to `Pkg.test()`
       - run: |
-          julia --check-bounds=yes --color=yes --depwarn=yes --project -e 'import Pkg; Pkg.add(PackageSpec(url="https://github.com/moment-kinetics/LagrangePolynomials")); Pkg.test()'
+          julia --project -e 'using Pkg; Pkg.add(PackageSpec(url="https://github.com/moment-kinetics/LagrangePolynomials"))'
+          julia --check-bounds=yes --color=yes --depwarn=yes --project -e 'import Pkg; Pkg.test()'
         shell: bash
