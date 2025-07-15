@@ -1,0 +1,18 @@
+name = "FiniteElementMatrices"
+uuid = "21a267ae-cf5f-40e4-86cc-2968ca96a734"
+version = "0.0.0"
+
+[deps]
+FastGaussQuadrature = "442a2c76-b920-505d-bb47-c5924d526838"
+LagrangePolynomials = "fb83b288-ce1a-45f4-939e-c34c34051e49"
+
+[compat]
+julia = "1.9.0"
+
+[extras]
+FastGaussQuadrature = "442a2c76-b920-505d-bb47-c5924d526838"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test", "FastGaussQuadrature", "LinearAlgebra"]
