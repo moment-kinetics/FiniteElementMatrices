@@ -79,7 +79,9 @@ The second derivative of a function $`f`$ can be found by solving the system
 ```math
 \sum_{j}K_{ij}f_j = \sum_{k}M_{ik}\left[\frac{d^2 f}{d x^2}\right]_k
 ```
-with $`f_j=f(x_j)`$.
+with $`f_j=f(x_j)`$. Here, we have ignored boundary terms
+that would be introduced by a nonzero $`df/dx`$ at the boundaries
+in $`x`$.
 
 For a system with Jacobian $`x`$ (e.g., cylindrical polar coordinates), we could form the appropriate matrices to evaluate
 a second derivative via
