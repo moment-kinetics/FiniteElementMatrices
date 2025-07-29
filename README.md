@@ -84,13 +84,17 @@ that would be introduced by a nonzero $`df/dx`$ at the boundaries
 in $`x`$.
 
 For a system with Jacobian $`x`$ (e.g., cylindrical polar coordinates), we could form the appropriate matrices to evaluate
-a second derivative via
+the 1D, radial Laplacian via
 ```
 coordinate = element_coordinates(x,scale,shift)
 M = finite_element_matrix(lagrange_x,lagrange_x,1,coordinate)    
 K = -finite_element_matrix(d_lagrange_dx,d_lagrange_dx,1,coordinate)
 ```
-and finally, we can form a nonlinear stiffness matrix by inserting an extra enum argument, as follows.
+i.e.,
+```math
+\sum_{j}K_{ij}f_j = \sum_{k}M_{ik}\left[\frac{1}{x}\frac{d}{d x}\left(x \frac{d f}{d x}\right)\right]_k.
+```
+Finally, we can form a nonlinear stiffness matrix by inserting an extra enum argument, as follows.
 ```
 N = finite_element_matrix(lagrange_x,lagrange_x,lagrange_x,1,coordinate)    
 ```
